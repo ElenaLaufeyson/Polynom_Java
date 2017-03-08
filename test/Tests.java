@@ -64,23 +64,27 @@ public class Tests {
 
     }
 
-    @Tag("Деление одного полинома на полином")
+    private double divar[] = new double[] {3, -5};
+    private double divar2[] = new double[] {5, 19};
+    private double divar3[] = new double[] {1};
+    private double divar4[] = new double[] {-3, -1, -4, -4};
+
+    @Tag("Результат деления одного полинома на полином")
     @Test
     public void div() {
-        boolean resb = true;
-        boolean ostb = false;
-        double divar[] = new double[] {3, -5};
-        double divar2[] = new double[] {5, 19};
-        double divar3[] = new double[] {1};
-        double divar4[] = new double[] {-3, -1, -4, -4};
         assertEquals(new Polynom(1, divar),
-                new Polynom(3, ar).div(new Polynom(2, ar1), resb));
-        assertEquals(new Polynom(1, divar2),
-                new Polynom(3, ar).div(new Polynom(2, ar1), ostb));
+                new Polynom(3, ar).div(new Polynom(2, ar1)));
         assertEquals(new Polynom(0, divar3),
-                new Polynom(5, ar4).div(new Polynom(5, ar5), resb));
+                new Polynom(5, ar4).div(new Polynom(5, ar5)));
+    }
+
+    @Tag("Остаток от деления одного полинома на другой")
+    @Test
+    public void divost() {
+        assertEquals(new Polynom(1, divar2),
+                new Polynom(3, ar).divost(new Polynom(2, ar1)));
         assertEquals(new Polynom(3, divar4),
-                new Polynom(5, ar4).div(new Polynom(5, ar5), ostb));
+                new Polynom(5, ar4).divost(new Polynom(5, ar5)));
 
     }
 }
