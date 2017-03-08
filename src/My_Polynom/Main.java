@@ -25,12 +25,10 @@ public class Main {
         Polynom res3 = p.multipl(p1);
         System.out.print("p*p1= ");
         res3.show();
-        boolean resb = true;
-        boolean ostb = false;
-        Polynom res4 = p.div(p1, resb);
+        Polynom res4 = p.div(p1);
         System.out.print("p/p1=");
         res4.show();
-        Polynom res5 = p.div(p1, ostb);
+        Polynom res5 = p.divost(p1);
         System.out.print("Остаток от деления p/p1= ");
         res5.show();
     }
