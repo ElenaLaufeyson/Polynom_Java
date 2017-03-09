@@ -7,8 +7,12 @@ import java.util.Arrays;
  */
 
 public class Polynom {
+    private double array[];
     private int deg;
-            double array[];
+
+    private int gettdeg() {
+        return array.length-1;
+    }
 
     @Override
     public String toString() {
@@ -44,17 +48,15 @@ public class Polynom {
         return result;
     }
 
-    public Polynom(int deg, double[] array) {
-        if (deg+1 != array.length) throw new IllegalArgumentException("Степень полинома " +
-                "не равна числу коэффициентов!");
-        this.deg = deg;
-        this.array = new double [deg+1]; //или new int [array.lenght]
+    public Polynom(double[] array) {
+        this.array = new double [array.length];
         for (int i=0;i<this.array.length;i++) {
             this.array[i] = array[array.length-1-i];
         }
+        this.deg = gettdeg();
     }
 
-    public Polynom(int deg) {
+    private Polynom(int deg) {
         this.deg = deg;
         this.array = new double[this.deg+1];
     }
@@ -106,7 +108,6 @@ public class Polynom {
     private void cut0() {
         if (this.deg == 0) return;
         int i;
-//        Polynom cutPol = new Polynom(this);
         for (i = this.deg; i >= 0; i--) {
             if (this.array[i] != 0) break;
         }
