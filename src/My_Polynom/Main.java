@@ -3,12 +3,12 @@ package My_Polynom;
 public class Main {
 
     public static void main(String[] args) {
-        double ar[] = new double[] {3, 2, 1, 0};
-        Polynom p = new Polynom (3, ar);
+        double ar[] = new double[]{3, 2, 1, 0};
+        Polynom p = new Polynom(ar);
         System.out.print("p: ");
         p.show();
-        double ar1[] = new double[] {1, 2, -1};
-        Polynom p1 = new Polynom(2, ar1);
+        double ar1[] = new double[]{1, 2, -1};
+        Polynom p1 = new Polynom(ar1);
         System.out.print("p1: ");
         p1.show();
         if (p.equals(p1)) System.out.println("p=p1");
@@ -21,7 +21,7 @@ public class Main {
         res2.show();
         int x = -2;
         System.out.println("If x=" + x + ", p= " + p.whatx(x) +
-            " and p1= " + p1.whatx(x));
+                " and p1= " + p1.whatx(x));
         Polynom res3 = p.multipl(p1);
         System.out.print("p*p1= ");
         res3.show();
