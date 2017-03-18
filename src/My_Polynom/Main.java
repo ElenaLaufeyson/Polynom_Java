@@ -31,5 +31,6 @@ public class Main {
         Polynom res5 = p.divost(p1);
         System.out.print("Остаток от деления p/p1= ");
         res5.show();
+        System.out.println("Искомый коэффициент: " + p.getCoefficient(3));
     }
 }
