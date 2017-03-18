@@ -10,8 +10,14 @@ public class Polynom {
     private double array[];
     private int deg;
 
-    private int gettdeg() {
+    public int gettdeg() {
         return array.length-1;
+    }
+
+    public double getCoefficient(int deg) {
+        if (deg < 0 || deg > this.gettdeg())
+            throw new IllegalArgumentException("Неверная степень");
+        return this.array[deg];
     }
 
     @Override
